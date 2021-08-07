@@ -1,0 +1,425 @@
+*{
+    font-family: 'Roboto', sans-serif;
+    font-size: 62.5%;
+}
+
+body{
+    background-image: linear-gradient(#58687E, #39495E);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.header{
+    position: relative;
+    display: flex;
+    margin: 2.5rem 0;
+    align-items: center;
+}
+.header_hrcLogo{
+    position: absolute;
+    left: 43%;
+} 
+.header_img_hrcLogo{
+    height: 4rem;
+}
+.header_img_abcProductLogo{
+    height: 4rem;
+}
+
+.invoiceList{
+    position: absolute;
+    top: 10rem;
+    left: 5.8rem;
+    width: 14.1rem;
+    height: 3.1rem;
+    text-align: left;
+    color: #FFFFFF;
+}
+.invoiceList_txt{
+    font-size: 1.6rem;
+    letter-spacing: 0.3rem;
+}
+.invoiceListBody{
+    position: relative;
+    top: 5.5rem;
+    margin: auto;
+    width: 94%;
+    background: #273D49CC 0% 0% no-repeat padding-box;
+    padding: 10px;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+.subhead{
+    float: right;
+    width: 40%;
+    
+}
+.subhead_Edit{
+    padding: 1rem;
+    background-color: transparent;
+    font-size: 1.5rem;
+    color: #97A1A9;;
+    font-weight: 300;
+    border: 1px solid #14AFF1;
+    border-radius: 10px;
+    margin: 0.5rem;
+
+}
+.subhead_Edit1{
+    padding: 1rem;
+    background-color: transparent;
+    font-size: 1.5rem;
+    color: #97A1A9;;
+    font-weight: 300;
+    border: 1px solid #A9A9A9;
+    border-radius: 10px;
+    margin: 0.5rem;
+
+}
+.edit_icon{
+    width: 1.4rem;
+    height: 1.2rem;
+}
+.search{
+   text-align: left;
+   font: normal normal normal 18px/21px Ubuntu;
+   letter-spacing: 0px;
+   color: #97A1A9;
+   font-size: 1.5rem;
+}
+
+table {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+  }
+  
+table tr {
+    padding: 1.5rem;
+    border-radius: 10px;
+}
+  
+table th,
+table td {
+    padding: 1rem;
+    text-align: center;
+    background: #273D49CC 0% 0% no-repeat padding-box;
+    color: #FFFFFF;
+}
+table th {
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: #97A1A9;
+    border-bottom: 1px solid #273D49CC;
+    border-collapse: collapse;
+}
+
+table td{
+    font-size: 1.3rem;
+}
+
+tr:nth-child(odd) {
+    background: #465b69 0% 0% no-repeat padding-box;
+}
+
+.pag_button{
+    height: 4rem;
+    width: 4rem;
+    border-radius: 100rem;
+    background: #14AFF1 0% 0% no-repeat padding-box;
+    font-size: 1.5rem;
+    float: left;
+    margin-top: -17.2%;
+    color: white;
+    text-align: center;
+}
+
+.pag_button1{
+    height: 4rem;
+    width: 4rem;
+    border-radius: 100rem;
+    background: #14AFF1 0% 0% no-repeat padding-box;
+    font-size: 1.5rem;
+    float: right;
+    margin-top: -17.2%;
+    color: white;
+    text-align: center;
+}
+.pg_left{
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+#blur.active{
+    filter: blur(5px);
+    pointer-events: none;
+    user-select: none;
+}
+
+.popUpEdit{
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 54.3rem;
+    height: 52%;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, .30);
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+    background: #2A3E4C 0% 0% no-repeat padding-box;
+    border-radius: 10px 10px 0px 0px;
+}
+
+#popupEdit.active{
+    top: 50%;
+    visibility: visible;
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.header_popupEdit{
+    position: relative;
+    display: flex;
+    margin: 2.5rem 0;
+    align-items: center;
+}
+
+.popup_heading{
+    position: absolute;
+    left: 5%;
+    color: #fff;
+    font-size: 1.5rem;
+
+}
+.popup_headClose{
+    position: absolute;
+    left: 90%;
+}
+
+.editInvoice{
+    position: absolute;
+    left: 3%;
+    color: #fff;
+    font-size: 1.5rem;
+    margin-top: 22px;
+}
+
+.closeImg{
+    position: absolute;
+    left: 90%;
+}
+
+.edit_header{
+    position: relative;
+    display: flex;
+    margin: 2.5rem 0;
+    align-items: center;
+}
+.label1{
+    text-align: left;
+    letter-spacing: 0.19px;
+    color: #97A1A9;
+    opacity: 1;
+    position: absolute;
+    left: 5%;
+    font-size: 2rem;
+
+}
+
+.label1Input{
+    position: absolute;
+    top: 52px;
+    left: 35%;
+    width: 25rem;
+    height: 3rem;
+    background: #283A46 0% 0% no-repeat padding-box;
+    border: 1px solid #356680;
+    border-radius: 10px;
+    opacity: 1;
+    color: #fff;
+    font-size: 1.4rem;
+}
+
+.txtC{
+    position: absolute;
+    left: 35%;
+    width: 25rem;
+    height: 19.1rem;
+    background: #283A46 0% 0% no-repeat padding-box;
+    border: 1px solid #356680;
+    border-radius: 10px;
+    opacity: 1;
+    color: #fff;
+    font-size: 1.4rem;
+}
+
+.footerBtn{
+    top: 642px;
+    left: 740px;
+    width: 483px;
+    height: 67px;
+    opacity: 1;
+}
+.footerBtn1{
+    position: absolute;
+    background-color: transparent;
+    border: none;
+    top: 86%;
+    left: 5%;
+    font-size: 2rem;
+    letter-spacing: 0px;
+    color: #14AFF1;
+    opacity: 1;
+    font-size: 1.5rem;
+}
+
+.footerBtn2{
+    position: absolute;
+    left: 67%;
+    top: 84%;
+    border: 1px solid #14AFF1;
+    border-radius: 10px;
+    padding: 0.8rem;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+}
+.footerBtn3{
+    position: absolute;
+    left: 80%;
+    background: #14AFF1 0% 0% no-repeat padding-box;
+}
+
+
+.popUpEditD{
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 35rem;
+    height: 40%;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, .30);
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+    background: #2A3E4C 0% 0% no-repeat padding-box;
+    border-radius: 10px 10px 0px 0px;
+}
+
+#popupEditD.active{
+    top: 50%;
+    visibility: visible;
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.dltpopBody{
+   margin-top: 45px;
+   font-size: 25px;
+   padding: 12px;
+   color: #C0C6CA;
+   letter-spacing: 0.2px;
+}
+.edit_header1{
+    margin-top: 40px;
+}
+.dltCus{
+    position: absolute;
+    left: 58%;
+    font-weight: 600;
+}
+
+.dltP{
+    color: #FF5E5E;
+}
+
+.popUpEditA{
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120.3rem;
+    height: 60%;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, .30);
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+    background: #2A3E4C 0% 0% no-repeat padding-box;
+    border-radius: 10px 10px 0px 0px;
+}
+
+#popupEditA.active{
+    top: 50%;
+    visibility: visible;
+    opacity: 1;
+    transition: 0.5s;
+}
+.formAdd{
+    display: flex;
+    flex-direction: column;
+}
+.addTxt1{
+    position: relative;
+    left: 18%;
+    width: 300px;
+    height: 35px;
+    background: #283A46 0% 0% no-repeat padding-box;
+    border: 1px solid #356680;
+    border-radius: 10px;
+    opacity: 1;
+    color: #fff;
+    font-size: 1.3rem;  
+}
+
+.addlCN{
+    position: relative;
+    color: #fff;
+    font-size: 1.4rem;
+    top: 30px;
+    left: 2%;
+}
+
+.duT{
+    position: relative;
+    left: 60%;
+    top: -221px;
+    color: #fff;
+    font-size: 1.6rem;
+}
+
+.dul{
+    position: relative;
+    left: 52%;
+    top: -190px;
+
+}
+
+
+.simg{
+    background:#283A46;
+    width: 25rem;
+}
+
+.txtC1{
+    position: relative;
+    left: 60%;
+    top: -210px;
+}
+.footerBtn4{
+    margin-left: -75px;
+}
+
+.footerBtn5{
+    left: 85%;
+}
+.star{
+    color: #FF5E5E;
+    font-size: 15px;
+    padding: 5x;
+}
+
+.search_icon{
+    margin-left: -4.5rem;
+}

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="style.css">
+    <title>Invoice Management</title>
+</head>
+
+<body>
+  <!-- header starts here -->
+  
+    <div class="header" id="blur">
+        <div class="header_abcProductLogo">
+            <img src="images/Group 20399.svg" alt="" class="header_img_abcProductLogo">
+        </div>
+        <div class="header_hrcLogo">
+            <img src="images/logo.svg" alt="" class="header_img_hrcLogo">
+        </div>
+    </div>
+    
+     <!-- header ends here -->
+     
+     
+      <!-- Grid Section starts here -->
+    
+    <div class="gridSection">
+        <div class="invoiceList">
+            <strong class="invoiceList_txt">Invoice List</strong>
+        </div>
+        
+         <!-- GridSection Body starts here -->
+        
+        <div class="invoiceListBody">
+        
+         <!-- GridSection Buttons sections starts here -->
+            <div class="subhead">
+                <button class="subhead_Edit" id="addBtn" onclick="blurrAdd()">
+                    <img src="images/Path 18189.svg" alt="" class="edit_icon"> Add
+                </button>
+                <button class="subhead_Edit1" id="editBtn" onclick="blurrEdit()">
+                    <img src="images/Path 18191.svg" alt="" class="edit_icon"> Edit
+                </button>
+                <button class="subhead_Edit1" id="deleteBtn" onclick="blurrDelete()">
+                    <img src="images/Path 18189-1.svg" alt="" class="edit_icon"> Delete
+                </button>
+                <input type="text" class="search subhead_Edit simg" placeholder="Search by Invoice Number" id="searchId">
+                <img src="images/search-24px (3).svg" alt="" class="edit_icon search_icon" onclick="search()">
+            </div>
+             <!-- GridSection Buttons sections ends here -->
+
+             <!-- GridSection Table part starts here -->
+            <div class="gridSection_table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>
+                                <input type="checkbox" name="tick_box" id="" class="tickAll" onclick="checkAll(this)">
+                            </th>
+                            <th>Customer Name</th>
+                            <th>Customer#</th>
+                            <th>Invoice#</th>
+                            <th>Invoice Amount</th>
+                            <th>Due Date</th>
+                            <th>Predicted Payment Date</th>
+
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tb">
+ 
+             <!-- Here i will create rows dynamically by help of JavaScript -->
+             
+                    </tbody>
+                </table>
+            </div>
+             <!-- GridSection Table part ends here -->
+        </div>
+         <!-- GridSection Body ends here -->
+         
+         <!-- Paginations Button starts here -->
+        <div class="gridSection_table_pagination">
+            <a href="#" class="pag_button" onclick="prevFunction()" id="prevArrow"><i class="fas fa-chevron-left pg_left"></i></a>
+        </div>
+        <div class="gridSection_table_pagination">
+            <a href="#" class="pag_button1" onclick="nextFunction()" id="nextArrow"><i class="fas fa-chevron-right pg_left"></i></a>
+        </div>
+          <!-- Paginations Button ends here -->
+    </div>
+           <!-- Grid Section ends here -->
+           
+            <!-- Pop-up section starts here -->
+            
+            <!-- Edit Pop-up starts here -->
+    <div class="popUpEdit" id="popupEdit">
+        <div class="edit_header">
+            <h2 class="editInvoice">Edit Invoice</h2>
+            <img src="images/baseline-close-24px.svg" alt="" class="closeImg" onclick="blurrEdit()">
+        </div>
+        <div class="form">
+            <form action="" method="POST">
+                <label for="" class="label1">Invoice Amount</label>
+                <input type="text" name="total_open_amount" id="edit_invoiceAmount" class="label1Input">
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <label for="" class="label1">Notes</label>
+                <textarea name="txt" id="txtId" cols="30" rows="10" class="txtC"></textarea>
+            </form>
+        </div>
+        <div class="footerBtn">
+            <button class="footerBtn1" onclick="blurrEdit()">Cancel</button>
+            <button class="footerBtn1 footerBtn2" type="reset">Reset</button>
+            <button class="footerBtn1 footerBtn2 footerBtn3" onclick="EditData()">Save</button>
+        </div>
+    </div>
+          <!-- Edit Pop-up ends here -->
+          
+          <!-- Delete Pop-up starts here -->
+    <div class="popUpEditD" id="popupEditD">
+        <div class="edit_header">
+            <h2 class="editInvoice">Delete record(s)?</h2>
+            <img src="images/baseline-close-24px.svg" alt="" class="closeImg" onclick="blurrDelete()">
+        </div>
+        <div class="dltpopBody">
+            <p>You'll lose your record(s) after this action.We can't recover them once you delete.Are you sure you want
+                to <span class="dltP">permanently delete</span>
+                them?</p>
+        </div>
+        <div class="footerBtn">
+            <button class="footerBtn1 footerBtn2 dltCus" onclick="blurrDelete()">Cancel</button>
+            <button class="footerBtn1 footerBtn2 footerBtn3" onclick="deleteRows()">Delete</button>
+        </div>
+    </div>
+        <!-- Delete Pop-up ends here -->
+        
+        <!-- Add Pop-up starts here -->
+    <div class="popUpEditA" id="popupEditA">
+        <div class="edit_header">
+            <h2 class="editInvoice">Add Invoice</h2>
+            <img src="images/baseline-close-24px.svg" alt="" class="closeImg closeImgAdd" onclick="blurrAdd()">
+        </div>
+        <div class="addBody">
+            <form action="" class="formAdd" method="POST">
+                <label for="" class="addlCN">Customer Name <span class="star"> *</span></label>
+                <input type="text" name="name_customer" id="custName" class="addTxt1" required>
+                <label for="" class="addlCN">Customer No<span class="star"> *</span></label>
+                <input type="text" name="cust_number" id="custNo" class="addTxt1" required>
+                <label for="" class="addlCN">Invoice No<span class="star"> *</span></label>
+                <input type="text" name="invoice_id" id="inId" class="addTxt1" required>
+                <label for="" class="addlCN">Invoice Amount<span class="star"> *</span></label>
+                <input type="text" name="total_open_amount" id="totalAmt" class="addTxt1" required>
+
+                <label for="" class="addlCN dul">Due Date<span class="star"> *</span></label>
+                <input type="date" name="due_in_date" id="dueDate" class="addTxt1 duT" required>
+
+                <label for="" class="addlCN dul">Notes</label>
+                <textarea name="txt" id="txtIdAdd" cols="30" rows="10" class="txtC txtC1"></textarea>
+
+      
+        <div class="footerBtn">
+            <button class="footerBtn1" onclick="blurrAdd()">Cancel</button>
+
+            <button class="footerBtn1 footerBtn2 footerBtn5" type="reset">Clear</button>
+            <button class="footerBtn1 footerBtn2 footerBtn3 footerBtn4 footerBtn5" onclick="redirect()">Add</button>
+            
+        </div>
+           </form>
+           </div>
+    </div>
+     <!-- Add Pop-up ends here -->
+  
+     <!-- Pop-up sections ends here -->
+
+
+    <script src="index.js"></script>
+</body>
+
+</html>
