@@ -18,7 +18,7 @@ public class UpdateEditData extends HttpServlet {
      //	Database URL and credentials
 	 private static String url = "jdbc:mysql://127.0.0.1:3306/hrcsummerintern";
      private static String username = "root";
-     private static String password = "Likumama@88";
+     private static String password = "********";
    
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	}
